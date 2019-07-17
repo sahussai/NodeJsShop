@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title><%= pageTitle %></title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    </head>
+    <body>
+        <!---<header>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item <%= path === '/' ? 'active' : '' %>">
+                    <a class="nav-link" href="/">Shop</a>
+                    </li>
+                    <li class="nav-item <%= path === '/products' ? 'active' : '' %>"></li>
+                    <a class="nav-link" href="/products">Products</a>
+                    </li>
+                    <li class="nav-item <%= path === '/cart' ? 'active' : '' %>"></li>
+                    <a class="nav-link" href="/cart">Cart</a>
+                    </li>
+                    <li class="nav-item <%= path === '/admin/add-product' ? 'active' : '' %>"></li>
+                    <a class="nav-link" href="/admin/add-product">Add Product</a>
+                    </li>
+                    <li class="nav-item <%= path === '/admin/product' ? 'active' : '' %>"></li>
+                    <a class="nav-link" href="/admin/products">Admin Product</a>
+                    </li>
+
+                </ul>
+            </nav>
+        </header> -->
+
+        <header>
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item <%= path === '/' ? 'active' : '' %> ">
+                        <a class="nav-link" href="/">Shop</a>
+                        </li>
+                        <li class="nav-item <%= path === '/products' ? 'active' : '' %> ">
+                        <a class="nav-link" href="/products">Products</a>
+                        </li>
+                        <li class="nav-item <%= path === '/cart' ? 'active' : '' %> ">
+                        <a class="nav-link" href="/cart">Cart</a>
+                        </li>
+                        <li class="nav-item <%= path === '/admin/add-product' ? 'active' : '' %> ">
+                        <a class="nav-link" href="/admin/add-product">Add Product</a>
+                        </li>
+                        <li class="nav-item <%= path === '/admin/products' ? 'active' : '' %> ">
+                        <a class="nav-link" href="/admin/products">Admin Product</a>
+                        </li>
+    
+                    </ul>
+                </nav>
+            </header>
+
+        <main>

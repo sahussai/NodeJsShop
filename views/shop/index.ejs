@@ -1,0 +1,22 @@
+<%- include('../includes/head') %>
+            <div class="container-fluid">
+                <div class="card-deck align-items-left">
+                    <% if (prods.length !== 0) {%>
+                        <% for (let product of prods) {%>
+                        <div class="col-sm-4 py-3">
+                            <div class="card w-100 mx-auto">
+                            <img class="card-img-top" src="<%= product.imageUrl %>" alt="Card image cap">
+                                <div class="card-body mx-auto">
+                                    <h5 class="card-title"><%= product.title %></h5>
+                                    <p class="card-text"><%= product.description %></p>
+                                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                                </div>
+                            </div>
+                        </div>
+                        <% }%>
+                    <% } else {%>
+                        <h1>No Products Available</h1>
+                    <% } %>
+                </div>
+            </div>
+ <%- include('../includes/end') %>
