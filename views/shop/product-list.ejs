@@ -4,12 +4,17 @@
                     <% if (prods.length !== 0) {%>
                         <% for (let product of prods) {%>
                             <div class="col-sm-4 py-3">
-                                <div class="card w-100 mx-auto">
-                                <img class="card-img-top" src="<%= product.imageUrl %>" alt="<%= product.title %>">
-                                    <div class="card-body mx-auto">
+                                <div class="card w-100 mx-auto h-100">
+                                    <div class="embed-responsive embed-responsive-16by9">
+                                        <img class="card-img-top embed-responsive-item" src="<%= product.imageUrl %>" alt="Card image cap">
+                                    </div>
+                                    <div class="card-body w-100">
                                         <h5 class="card-title"><%= product.title %></h5>
-                                        <p class="card-text"><%= product.description %></p>
-                                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                                        <p class="card-text "><%= product.description %></p>
+                                    </div>
+                                    <div class="card-footer" style="background-color:transparent;">
+                                        <a href="/products/<%= product.id %>" class="btn btn-primary btn-lg btn-block my-2">Details</a>
+                                        <%- include('../includes/add-to-cart.ejs', {product:product}) %>
                                     </div>
                                 </div>
                             </div>
