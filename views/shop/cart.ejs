@@ -1,3 +1,39 @@
 <%- include('../includes/head') %>
-<h1> <%= path %></h1>
+<div class="container-fluid">
+  <div class="card-deck">
+    <% if (products.length > 0) {%> <% for (let product of products) {%>
+    <div class="col-sm-4 py-3">
+      <div class="card w-100 mx-auto h-100">
+        <div class="embed-responsive embed-responsive-16by9">
+          <img
+            class="card-img-top embed-responsive-item"
+            src="<%= product.imageUrl %>"
+            alt="Card image cap"
+          />
+        </div>
+        <div class="card-body w-100">
+          <h2 class="card-title"><%= product.title %></h2>
+          <h2 class="card-title">Quantity: <%= product.quantity %></h2>
+        </div>
+        <div class="card-footer" style="background-color:transparent;">
+          <form action="/cart-delete-item" method="POST">
+            <button type="submit" class="btn btn-primary btn-lg btn-block my-2">
+              Delete
+            </button>
+            <input type="hidden" value="<%= product._id %>" name="productId" />
+          </form>
+        </div>
+      </div>
+    </div>
+    <% }%> <% } else {%>
+    <h1>No Products Available</h1>
+    <% } %>
+  </div>
+  <hr />
+  <form action="/create-order" method="POST">
+    <button type="submit" class="btn btn-primary btn-lg btn-block my-2">
+      Order Now
+    </button>
+  </form>
+</div>
 <%- include('../includes/end') %>
