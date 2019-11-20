@@ -1,4 +1,17 @@
-<%- include('../includes/head') %>
-<h1> <%= path %></h1>
-<h1>Nothing there</h1>
-<%- include('../includes/end') %>
+<%- include('../includes/head') %> <% if (orders.length !== 0) {%> <% for (let
+order of orders) {%>
+
+<div class="alert alert-success mx-2" role="alert">
+  <h4 class="alert-heading">
+    Order - # <%=order._id%>
+  </h4>
+  <hr />
+  <% if (order.products.length !== 0) {%> <% for (let p of order.products) {%>
+  <div class="alert alert-primary" role="alert">
+    <%=p.product.title%> (<%=p.quantity%>)
+  </div>
+  <% } } %>
+</div>
+<% }%> <% } else {%>
+<h1>No Products Available</h1>
+<% } %> <%- include('../includes/end') %>

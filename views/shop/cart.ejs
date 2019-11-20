@@ -12,15 +12,20 @@
           />
         </div>
         <div class="card-body w-100">
-          <h2 class="card-title"><%= product.title %></h2>
+          <h2 class="card-title"><%= product.productId.title %></h2>
           <h2 class="card-title">Quantity: <%= product.quantity %></h2>
         </div>
         <div class="card-footer" style="background-color:transparent;">
           <form action="/cart-delete-item" method="POST">
+            <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
             <button type="submit" class="btn btn-primary btn-lg btn-block my-2">
               Delete
             </button>
-            <input type="hidden" value="<%= product._id %>" name="productId" />
+            <input
+              type="hidden"
+              value="<%= product.productId._id %>"
+              name="productId"
+            />
           </form>
         </div>
       </div>
@@ -31,6 +36,7 @@
   </div>
   <hr />
   <form action="/create-order" method="POST">
+    <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
     <button type="submit" class="btn btn-primary btn-lg btn-block my-2">
       Order Now
     </button>

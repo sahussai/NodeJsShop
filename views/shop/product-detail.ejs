@@ -1,21 +1,27 @@
 <%- include('../includes/head') %>
 
 <div class="container my-3 align-items-center">
-    <div class="jumbotron ">
-        <h1 class="display-4 text-center"><%= product.title %></h1>
-        <hr class="my-4">
-        <h2 class="text-center">$<%= product.price %></h2>
-        <div class="row align-items-center">
-                <div class="embed-responsive embed-responsive-16by9">
-                    <img class="card-img-top embed-responsive-item" src="<%= product.imageUrl %>" alt="Card image cap">
-                </div>
-        </div>
-        <div class="row sm-6">
-            <p><%= product.description%><p>
-        </div>
-        <%- include('../includes/add-to-cart.ejs') %>
+  <div class="jumbotron ">
+    <h1 class="display-4 text-center"><%= product.title %></h1>
+    <hr class="my-4" />
+    <h2 class="text-center">$<%= product.price %></h2>
+    <div class="row align-items-center">
+      <div class="embed-responsive embed-responsive-16by9">
+        <img
+          class="card-img-top embed-responsive-item"
+          src="<%= product.imageUrl %>"
+          alt="Card image cap"
+        />
+      </div>
     </div>
-</div>
+    <div class="row sm-6">
+      <p><%= product.description%></p>
+      <p></p>
+    </div>
 
+    <% if (isAuthenticated) { %> <%- include('../includes/add-to-cart.ejs') %>
+    <% } %>
+  </div>
+</div>
 
 <%- include('../includes/end') %>
